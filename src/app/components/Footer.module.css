@@ -1,0 +1,251 @@
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 40px 20px;
+}
+
+.footerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.topSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 40px;
+  padding: 20px;
+  padding-left: 6rem;
+}
+
+.newsletter, .contact {
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+.newsletter h2, .contact h2 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.newsletter p {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+.contact p{
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.contact p a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.contact p a:hover {
+  color: #ddd;
+  text-decoration: underline;
+}
+.contact{
+  margin-left: 12rem;
+}
+
+.currency {
+  margin-top: 45px;
+}
+
+.flag {
+  display: flex;
+  align-items: center;
+}
+
+.flag img {
+  margin-right: 10px;
+  border-radius: 50px;
+}
+
+.newsletter form {
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+  margin-top: 10%;
+}
+
+.newsletter input {
+  flex: 1;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+}
+
+.newsletter button {
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.newsletter button:hover {
+  background-color: #333;
+  border-color: #bbb;
+}
+
+.media {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.media a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.media a:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s;
+}
+
+.bottomSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px;
+  margin-left: 6rem;
+}
+
+.quickLinks{
+  margin-right: 15px;
+}
+
+.followUs{
+  margin-right: 15.5rem;
+}
+
+.metta, .quickLinks, .followUs {
+  flex: 1;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.metta h2, .quickLinks h2, .followUs h2 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.metta ul, .quickLinks ul, .followUs .dropdownContent {
+  list-style-type: none;
+  padding: 0;
+  display: none;
+}
+
+.metta ul.show, .quickLinks ul.show, .followUs .dropdownContent.show {
+  display: block;
+}
+
+.metta ul li, .quickLinks ul li {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.metta ul li:hover, .quickLinks ul li:hover {
+  color: #bbb;
+  text-decoration: underline;
+}
+
+.metta ul li a, .quickLinks ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.metta ul li a:hover, .quickLinks ul li a:hover {
+  color: #ddd;
+}
+
+.followUs p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.followUs a img, .paymentIcons img {
+  margin-right: 10px;
+  width: 24px;
+  height: 24px;
+}
+
+.paymentIcons {
+  display: flex;
+  margin-top: 10px;
+}
+
+.paymentIcons img {
+  width: 40px;
+  border-radius: 2px;
+}
+
+.paymentIcons img:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s;
+}
+
+.footerBottom {
+  text-align: center;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+  width: 100%;
+}
+
+.horizontalLine {
+  width: 100%;
+  border: 1px solid #bbb;
+  margin: 0;
+}
+
+.dropdownButton {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.1rem;
+  text-align: left;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.dropdownButton:hover {
+  color: #ddd;
+}
+
+.arrow {
+  margin-left: 10px;
+}
+
+.accepts{
+  margin-top: 30px;
+}
+
+@media (min-width: 768px) {
+  .footerContent {
+    flex-direction: column;
+  }
+
+  .topSection {
+    flex-direction: row;
+  }
+
+  .bottomSection {
+    flex-direction: row;
+  }
+
+  .metta ul, .quickLinks ul, .followUs .dropdownContent {
+    display: block;
+  }
+
+  .dropdownButton {
+    display: none;
+  }
+}

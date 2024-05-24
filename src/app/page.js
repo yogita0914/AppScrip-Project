@@ -1,95 +1,65 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
 
-export default function Home() {
+import React, { useState } from 'react';
+import RootLayout from './layout';
+import ProductList from './components/ProductList';
+import Slidebar from './components/Slidebar';
+import CustomDropdown from './components/CustomDropdown';
+import styles from './page.module.css';
+
+const sortingOptions = [
+  'Recommended',
+  'Newest First',
+  'Popular',
+  'Price: High to Low',
+  'Price: Low to High'
+];
+
+const Page = () => {
+  const [isSlidebarVisible, setIsSlidebarVisible] = useState(true);
+  const [selectedSort, setSelectedSort] = useState(sortingOptions[0]);
+
+  const toggleSlidebar = () => {
+    setIsSlidebarVisible(!isSlidebarVisible);
+  };
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
+    <div>
+      <div className={styles.productSection}>
+        <div className={styles.homePage}>
+          <div className={styles.homeShop}><p href="#">Home </p></div>
+          <div><p>| Shop</p></div>
+        </div>
+        <h1 className={styles.header}>DISCOVER OUR PRODUCTS</h1>
+        <p className={styles.paragraph}>
+          Lorem ipsum dolor sit amet consectetur. Amet est posuere rhoncus scelerisque. Dolor integer scelerisque nibh amet mi ut elementum dolor.
         </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+      </div>
+
+      <div className={styles.controls}>
+        <div className={styles.items}>
+          <p>3425 ITEMS</p>
+          <button onClick={toggleSlidebar}>
+            {isSlidebarVisible ? 'Hide Filter' : 'Show Filter'}
+          </button>
+        </div>
+        <div className={styles.dropdown}>
+          <CustomDropdown
+            options={sortingOptions}
+            selected={selectedSort}
+            onSelect={setSelectedSort}
+          />
         </div>
       </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className={styles.content}>
+        {isSlidebarVisible && <Slidebar />}
+        <div className={isSlidebarVisible ? styles.containerWithSidebar : styles.containerWithoutSidebar}>
+          <ProductList />
+        </div>
       </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div>
   );
-}
+};
+
+export default Page;

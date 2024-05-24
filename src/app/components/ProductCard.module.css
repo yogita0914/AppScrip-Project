@@ -1,0 +1,49 @@
+.card {
+  border: 1px solid #b6b3b3;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  margin: 1rem;
+  width: 280px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.image {
+  height: 190px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #616060;
+}
+
+.price {
+  color: #666666;
+}
+
+.rating {
+  color: #535252;
+}
+
+@media (max-width: 768px) {
+  .card {
+    border: 1px solid #b6b3b3;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    width: 190px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}

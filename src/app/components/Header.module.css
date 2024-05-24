@@ -1,0 +1,106 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.leftContainer {
+  display: flex;
+  align-items: center;
+}
+
+.burgerMenu {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logoText {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-left: 15rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  margin-left: 6rem;
+  margin-top: 10px;
+
+}
+
+.nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #000;
+  font-weight: 530;
+}
+.nav a:hover{
+  color: brown;
+  text-decoration: underline;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+.actions a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #000;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .burgerMenu {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    border-top: 1px solid #ddd;
+  }
+
+  .logoText{
+    margin-left: 4rem;
+  }
+
+  .nav a {
+    margin: 10px 0;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .navOpen {
+    display: flex;
+  }
+
+  .actionslast {
+    display: none;
+  }
+
+  .languageSelector{
+    display: none;
+  }
+
+  .logoContainer {
+    justify-content: flex-start;
+  }
+}
