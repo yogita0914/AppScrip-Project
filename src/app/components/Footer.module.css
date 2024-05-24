@@ -16,7 +16,6 @@
   width: 100%;
   margin-bottom: 40px;
   padding: 20px;
-  padding-left: 6rem;
 }
 
 .newsletter, .contact {
@@ -33,7 +32,8 @@
   margin-bottom: 10px;
   font-size: 15px;
 }
-.contact p{
+
+.contact p {
   margin-bottom: 10px;
   font-size: 12px;
 }
@@ -46,9 +46,6 @@
 .contact p a:hover {
   color: #ddd;
   text-decoration: underline;
-}
-.contact{
-  margin-left: 12rem;
 }
 
 .currency {
@@ -114,15 +111,6 @@
   flex-direction: column;
   width: 100%;
   padding: 20px;
-  margin-left: 6rem;
-}
-
-.quickLinks{
-  margin-right: 15px;
-}
-
-.followUs{
-  margin-right: 15.5rem;
 }
 
 .metta, .quickLinks, .followUs {
@@ -171,7 +159,7 @@
   align-items: center;
 }
 
-.followUs a img, .paymentIcons img {
+.followUs a img {
   margin-right: 10px;
   width: 24px;
   height: 24px;
@@ -185,6 +173,7 @@
 .paymentIcons img {
   width: 40px;
   border-radius: 2px;
+  margin-left: 10px;
 }
 
 .paymentIcons img:hover {
@@ -224,8 +213,36 @@
   margin-left: 10px;
 }
 
-.accepts{
+.accepts {
   margin-top: 30px;
+}
+
+
+@media (max-width: 767px) {
+  .secondHeading {
+    display: none;
+  }
+  .topSection {
+    padding-left: 0;
+  }
+  .contact {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+  }
+  .bottomSection {
+    margin-left: 0;
+  }
+  .paymentIcons img {
+    height: 30px;
+    width: 40px;
+    border-radius: 2px;
+    margin-left: 30px;
+  }
+  .paymentIcons img:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s;
+  }
 }
 
 @media (min-width: 768px) {
@@ -235,6 +252,12 @@
 
   .topSection {
     flex-direction: row;
+  }
+
+  .contact {
+    display: flex;
+    flex-direction: column;
+    margin-left: 12rem;
   }
 
   .bottomSection {
